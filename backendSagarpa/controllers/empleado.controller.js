@@ -38,23 +38,7 @@ const getById = (req, res) => {
 
 
 const create = (req, res) => {
-    
-    let empleado = req.body;
-    let hash = bcrypt.hashSync(empleado.contrasena, bcrypt.genSaltSync(9));
-    //const hash2 = bcrypt.hashSync (empleado.contrasena, bcrypt.genSaltSync(9));
-    empleado.contrasena = hash;
-    console.log("empleado",empleado);
-    //console.log('has2',hash2);
-
-    _empleado.create(empleado)
-        .then(empleadoCreated => res.json({ code: status.OK, empleado: empleadoCreated }))
-        .catch(err => res.status(status.BAD_REQUEST).json({
-            code: status.BAD_REQUEST,
-            message: 'Error in request',
-            detail: err.toString()
-        }));
-
-    /*
+        
     let empleado = req.body;
     let hash = bcrypt.hashSync(empleado.contrasena, bcrypt.genSaltSync(9));
     //const hash2 = bcrypt.hashSync (empleado.contrasena, bcrypt.genSaltSync(9));
@@ -68,7 +52,6 @@ const create = (req, res) => {
             message: 'Error in request',
             detail: err.toString()
         }));
-    */
 };
 
 const update = (req, res) => {

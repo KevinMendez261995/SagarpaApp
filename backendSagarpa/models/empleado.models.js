@@ -5,10 +5,10 @@ let empleadoSchema = new mongoose.Schema({
     //grua:{type:String ,required:true,unique:true},
     usuario:{type:String,required:true,unique:true},
     contrasena:{type:String,required:true},    
-    nombre:{type:String,required:true},
+    /*nombre:{type:String,required:true},
     apellido:{type:String,required:true},
     rol:{type:String,required:true},
-    activo:{type:Boolean,default:true}    
+    activo:{type:Boolean,default:true}*/
 });
 
 

@@ -3,7 +3,18 @@ const mongoose = require('mongoose');
 
 let usuarioSchema = new mongoose.Schema({
     usuario:{type:String,required:true,unique:true},
-    password:{type:String,required:true,unique:true},   
+    password:{type:String,required:true},
+    agropecuario:{type:Boolean,default:false},
+    agricultor:{type:Boolean,default:false},
+    ganadero:{type:Boolean,default:false},
+    datos:{
+    	nombre:{type:String,required:true},
+    	apellidoP:{type:String,required:true},
+    	apellidoM:{type:String,required:true},
+    	curp:{type:String,default:""},
+    	telefono:{type:String,default:""},
+    	rfc:{type:String,default:""}
+    }
 });
 
 /*
