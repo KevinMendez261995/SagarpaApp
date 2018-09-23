@@ -7,15 +7,16 @@ const expressJWT = require('express-jwt');
 var config = require('./_config');
 
 //url para acceder al backend en web
-const URL = '/gruas'; 
+const URL = '/sagarpa'; 
 
 // MODELS
 require('./models/models')(wagner);
 
 //Son las llamadas al router para poder realizar las peticiones al servidor.
-const empleado = require('./router/empleado.router')(wagner);
+//const empleado = require('./router/empleado.router')(wagner);
 const usuarios = require('./router/usuarios.router')(wagner);
 const login = require('./router/login.router')(wagner);
+//const productos = require('./router/productos.router')(wagner);
 /**aqui se van agregando todos los modelos con la direccion de su archivo router*/
 
 
@@ -52,16 +53,17 @@ function(err, req, res, next) {
 );*/
 
 // ROUTERS
-const v = 'v1';
-const uri = `${URL}/${v}/`;
+//const v = 'v1'; /${v}/
+const uri = `${URL}/`;
 
 console.log(uri);
 
 
 // example: app.use(uri+'mobile', mobile); declaracion de rutas de colecciones.
-app.use(uri + 'empleado', empleado);
+//app.use(uri + 'empleado', empleado);
 app.use(uri + 'login', login);
 app.use(uri + 'usuarios', usuarios);
+//app.use(uri + 'productos', productos);
 /*app.use(uri + 'solicitud', solicitud);
 app.use(uri + 'ayudaTerceros', ayudaTerceros);
 app.use(uri + 'code', code);*/
