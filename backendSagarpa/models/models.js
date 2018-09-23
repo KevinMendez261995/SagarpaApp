@@ -13,13 +13,15 @@ module.exports = (wagner) => {
     wagner.factory('db', () => mongoose);
     
     //lo que va dentro de require es la variable que exportas de  "collection".model.js
-    const Empleado = require('./empleado.models');
+    //const Empleado = require('./empleado.models');
     const Usuarios = require('./usuarios.models');
+    const Productos = require('./productos.models');
 
     const models = {
         //Role, declaras las const de arriba        
-        Empleado,
-        Usuarios
+        //Empleado,
+        Usuarios,
+        Productos
     };
 
     _.each(models, (v, k) => {

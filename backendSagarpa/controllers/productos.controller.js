@@ -7,17 +7,9 @@ const bcrypt = require('bcryptjs');
 //collection I need
 let _productos;
 
-
-const getAll = (req, res) => {
+const getAllProductos = (req, res) => {
     _productos.find({})
         .exec(handler.handleMany.bind(null, 'productos', res));
-};
-
-const getById = (req, res) => {
-    let {_id}=req.params;
-    console.log(_id);
-    _productos.find({_id})
-        .exec(handler.handleOne.bind(null, 'productos', res));        
 };
 
 const create = (req, res) => {
@@ -55,12 +47,11 @@ const remove = (req, res) => {
 };
 
 //todos los export dentro del parentesis
-module.exports = (Productos) => {
-    _productos = Productos;
+module.exports = (Prueba) => {
+    _productos = Prueba;
     return ({
         //todas las funciones de empleados.router.js
-        getAll,
-        getById,
+        getAllProductos,
         create,
         update,
         remove
