@@ -16,6 +16,7 @@ require('./models/models')(wagner);
 //const empleado = require('./router/empleado.router')(wagner);
 const productos = require('./router/productos.router')(wagner);
 const usuarios = require('./router/usuarios.router')(wagner);
+const noticias = require('./router/noticias.router')(wagner);
 //const login = require('./router/login.router')(wagner);
 /**aqui se van agregando todos los modelos con la direccion de su archivo router*/
 
@@ -64,6 +65,7 @@ console.log(uri);
 //app.use(uri + 'login', login);
 app.use(uri + 'usuarios', usuarios);
 app.use(uri + 'productos', productos);
+app.use(uri + 'productos', noticiass);
 /*app.use(uri + 'solicitud', solicitud);
 app.use(uri + 'ayudaTerceros', ayudaTerceros);
 app.use(uri + 'code', code);*/

@@ -1,14 +1,14 @@
 //La palabra const define la variable para que solo pueda tener ese valor y no se cambie
 const mongoose = require('mongoose');
 
-let productoSchema = new mongoose.Schema({
-    nomProducto:{type:String,required:true, unique:true},
-    //fechaReg:{type:Date,default:new Date(Date.now).toISOString()},
-    estatus:{type:Boolean,default:true},
-    cantidad:{type:Number,default:0},
-    unidadMed:{type:String,defualt:""},
-    //productor:{type:Schema.ObjectId,ref:"Usuarios"}
-
+let noticiaSchema = new mongoose.Schema({
+    titulo:{type:String,required:true,unique:true},
+    descripcion:{type:String,required:true},
+	fechaReg:{type:String,required:true},
+	archivo:{type:String,required:true},
+	foto:{type:String,required:true}
+    
+    
 });
 
 /*
@@ -17,10 +17,10 @@ let productoSchema = new mongoose.Schema({
 		2.- Nombre del esquema
 		3.- La colección con su nombre normal.
 */
-const modeloProducto = mongoose.model('Productos',productoSchema,'productos');
+const modeloNoticia = mongoose.model('Noticias',noticiaSchema,'noticias');
 
 /*
 	Exportamos nuestra variable que tendrá la estructura del modelo y la 
 	colección a donde se realizará la acción que se requiera
  */
-module.exports = modeloProducto;
+module.exports = modeloNoticia;
