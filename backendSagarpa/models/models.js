@@ -16,12 +16,14 @@ module.exports = (wagner) => {
     //const Empleado = require('./empleado.models');
     const Usuarios = require('./usuarios.models');
     const Productos = require('./productos.models');
+	const Noticias = require('./noticias.models');
 
     const models = {
         //Role, declaras las const de arriba        
         //Empleado,
         Usuarios,
-        Productos
+        Productos,
+		Noticias
     };
 
     _.each(models, (v, k) => {

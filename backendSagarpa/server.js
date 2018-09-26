@@ -65,7 +65,7 @@ console.log(uri);
 //app.use(uri + 'login', login);
 app.use(uri + 'usuarios', usuarios);
 app.use(uri + 'productos', productos);
-app.use(uri + 'productos', noticiass);
+app.use(uri + 'noticias', noticias);
 /*app.use(uri + 'solicitud', solicitud);
 app.use(uri + 'ayudaTerceros', ayudaTerceros);
 app.use(uri + 'code', code);*/

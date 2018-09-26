@@ -25,7 +25,7 @@ const getById = (req, res) => {
 const create = (req, res) => {
         
     let noticia = req.body;
-    _noticias.create(usuario)
+    _noticias.create(noticia)
         .then(noticiaCreated => res.json({ code: status.OK, noticia: noticiaCreated }))
         .catch(err => res.status(status.BAD_REQUEST).json({
             code: status.BAD_REQUEST,
